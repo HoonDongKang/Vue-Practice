@@ -20,7 +20,7 @@
     }
     var appContent={
       template:'<div>content<button @click="passNumber()">pass</button></div>',
-      methods:{
+      methods:{ 
         passNumber(){
           this.$emit('pass',10)
         }
