@@ -1,7 +1,9 @@
 <template>
   <div>
     <ul>
-      <li v-for="(todoItem, index) in todoItems" :key="index">{{todoItem}}
+      <li v-for="(todoItem, index) in propsdata" :key="index">
+        <input type="checkbox" :class="{checkBtnCompleted: todoItem.completed}" @click="toggleComplete(todoItem,index)">
+        <span :class="{textCompleted: todoItem.completed}">{{todoItem.item}}</span>
         <button @click="removeTodo(todoItem, index)">remove</button>
       </li>
     </ul>
@@ -10,29 +12,20 @@
 
 <script>
 export default {
-  data(){
-    return{
-      todoItems:[]
-    }
-  },
-  created(){
-    if(localStorage.length>0){
-      for(var i= 0; i<localStorage.length; i++){
-        if(localStorage.key(i) !== 'loglevel:webpack-dev-server'){
-          this.todoItems.push(localStorage.key(i))
-        }
-      }
-    }
-  },
+  props:['propsdata'],
   methods:{
     removeTodo(todoItem, index){
-      localStorage.removeItem(todoItem);
-      this.todoItems.splice(index,1)
+      this.$emit('removeItem',todoItem,index)
+    },
+    toggleComplete(todoItem, index){
+      this.$emit('toggleItem',todoItem, index)
     }
   }
 }
 </script>
 
 <style>
-
+.textCompleted{
+  color:red
+}
 </style>

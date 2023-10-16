@@ -14,8 +14,10 @@ export default {
   },
   methods:{
     addTodo(){
-      localStorage.setItem(this.newTodoItem, this.newTodoItem)
-      this.clearInput()
+      if(this.newTodoItem !== ''){
+        this.$emit('addTodoItem',this.newTodoItem)
+        this.clearInput()
+      }
     },
     clearInput(){
       this.newTodoItem=''
