@@ -1,6 +1,6 @@
 <template>
   <h1>
-    TODO it!
+    {{this.$store.state.headerText}}
   </h1>
 </template>
 
