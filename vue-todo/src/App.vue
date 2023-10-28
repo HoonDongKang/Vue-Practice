@@ -1,29 +1,33 @@
 <template>
   <div id="app">
-    <TodoHeader></TodoHeader>
+    <!-- <TodoHeader></TodoHeader>
     <TodoInput @addTodoItem="addOneItem"></TodoInput>
     <TodoList :propsdata="todoItems" @removeItem="removeOneItem" @toggleItem="toggleOneItem"></TodoList>
-    <TodoFooter @clearAll="clearAllItems"></TodoFooter>
+    <TodoFooter @clearAll="clearAllItems"></TodoFooter> -->
+    <TestOneVue @test1Data="getTest1"></TestOneVue>
   </div>
 </template>
 
 <script>
-import TodoHeader from './components/TodoHeader.vue'
-import TodoFooter from './components/TodoFooter.vue'
-import TodoInput from './components/TodoInput.vue'
-import TodoList from './components/TodoList.vue'
+// import TodoHeader from './components/TodoHeader.vue'
+// import TodoFooter from './components/TodoFooter.vue'
+// import TodoInput from './components/TodoInput.vue'
+// import TodoList from './components/TodoList.vue'
+import TestOneVue from './components/TestOne.vue'
 
 export default {
   name: 'App',
   components:{
-    'TodoHeader':TodoHeader,
-    'TodoFooter': TodoFooter,
-    'TodoInput':TodoInput,
-    'TodoList':TodoList
+    // 'TodoHeader':TodoHeader,
+    // 'TodoFooter': TodoFooter,
+    // 'TodoInput':TodoInput,
+    // 'TodoList':TodoList,
+    TestOneVue
   },
   data(){
     return{
-      todoItems:[]
+      todoItems:[],
+      test2Data:''
     }
   },
   methods:{
@@ -46,6 +50,10 @@ export default {
     //   localStorage.clear()
     //   this.todoItems=[]
     // }
+    getTest1(value){
+      console.log(value)
+      this.test2Data = value
+    }
   },
 }
 </script>
