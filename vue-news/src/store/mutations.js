@@ -10,5 +10,8 @@ export default{
   SET_JOBS(state, jobs){
     //mutaton -> mutate to state
     state.jobs = jobs;
+  },
+  SET_USER(state,user){
+    state.user = user;
   }
 }
