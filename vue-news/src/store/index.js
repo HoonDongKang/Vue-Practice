@@ -10,12 +10,16 @@ export const store = new Vuex.Store({
     news: [],
     ask: [],
     jobs: [],
-    user: {}
+    user: {},
+    item: {}
   },
   getters: {
     //computed store버전
     fetchedAsk(state){
       return state.ask;
+    },
+    fetchedItem(state){
+      return state.item;
     }
   },
 mutations,
