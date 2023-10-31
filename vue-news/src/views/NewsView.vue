@@ -5,22 +5,19 @@
         <div class="point">
           {{ item.points }}
         </div>
-        <a :href="item.url">
-          {{ item.title }}
-        </a>
-        <small>
-          {{ item.time_age }} by 
-        <router-link :to="`/user/${item.user}`">{{ item.user }}</router-link>
+        <div class="news-title">
+          <a :href="item.url">
+            {{ item.title }}
+          </a>
+          <small class="link-text">
+             by {{ item.time_age }} 
+          <router-link :to="`/user/${item.user}`" class="link-text">{{ item.user }}</router-link>
       </small>
+        </div>
+
+
       </li>
     </ul>
-    <!-- <p v-for="user in this.$store.state.news" :key="user.id">
-      <a :href=item.url>{{user.title}}</a>
-      <small>
-        {{ user.time_age }} by 
-        <router-link :to="`/user/${user.user}`">{{ user.user }}</router-link>
-      </small>
-    </p> -->
   </div>
 </template>
 
@@ -51,6 +48,12 @@ export default {
   align-items: center;
   justify-content: center;
   color: #42b883
+}
+.news-title{
+  margin: 0;
+}
+.link-text{
+  color: #828282;
 }
 
 </style>

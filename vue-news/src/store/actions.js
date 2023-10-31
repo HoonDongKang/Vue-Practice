@@ -25,7 +25,6 @@ export default{
   FETCH_USER({ commit }, name){
     fetchUserInfo(name)
       .then(res => {
-        console.log(res)
         commit('SET_USER', res.data);
       })
       .catch(err => console.error(err))
