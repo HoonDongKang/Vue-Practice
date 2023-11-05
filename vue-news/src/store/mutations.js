@@ -16,5 +16,8 @@ export default{
   },
   SET_ITEM(state, item){
     state.item = item;
+  },
+  SET_LIST(state, pageName){
+    state.list = pageName;
   }
 }

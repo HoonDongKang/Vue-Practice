@@ -10,6 +10,7 @@
 
 <script>
 import UserProfileVue from '../components/UserProfile.vue';
+import bus from '../utils/bus';
 export default {
   components:{
     UserProfileVue
@@ -21,7 +22,13 @@ export default {
   },
   created(){
     const username = this.$route.params.id;
-    this.$store.dispatch('FETCH_USER', username);
+    this.$store.dispatch('FETCH_USER', username)
+      .then(()=> {
+        bus.$emit("end:spinner");
+      })
+      .catch((err)=>{
+        console.error(err);
+      })
   },
 }
 </script>
