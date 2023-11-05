@@ -19,7 +19,6 @@
 <script>
 import { mapGetters } from 'vuex';
 import UserProfileVue from '../components/UserProfile.vue';
-import bus from '../utils/bus';
 
 export default {
   components:{
@@ -27,16 +26,6 @@ export default {
   },
   computed:{
     ...mapGetters(['fetchedItem'])
-  },
-  created(){
-    const id = this.$route.params.id;
-    this.$store.dispatch('FETCH_ITEM', id)
-      .then(()=> {
-        bus.$emit("end:spinner");
-      })
-      .catch((err)=>{
-        console.error(err);
-      })
   }
 }
 </script>
