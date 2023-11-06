@@ -1,5 +1,5 @@
 <template>
-  <form @submit="submitForm">
+  <!-- <form @submit="submitForm">
     <div>
       <label for="username">id: </label>
       <input type="text" id="username" v-model="username">
@@ -10,11 +10,17 @@
     </div>passworddd
     <button type="submit">Login</button>
 
-  </form>
+  </form> -->
+  <drag-comp></drag-comp>
 </template>
 
 <script>
+import DragComp from './components/DragComp.vue'
+
 export default {
+  components:{
+    DragComp
+  },
   data(){
     return{
       username:'',
