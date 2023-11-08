@@ -1,5 +1,5 @@
 <template>
-    <vue-draggable-resizable :w="200" :h="200" :x="0" :y="0" @resizing="onResize" @resizestop="onResizeStop">
+    <vue-draggable-resizable :w="200" :h="200" :x="0" :y="0" @resizing="onResize" @resizestop="onResizeStop" :parent="true">
       <p>{{ resizing ? 'You are resizing me crazy' : 'This is my favourite shape' }}<br>
       X: {{ x }} / Y: {{ y }} - Width: {{ width }} / Height: {{ height }}</p>
     </vue-draggable-resizable>

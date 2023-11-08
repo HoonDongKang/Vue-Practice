@@ -11,15 +11,18 @@
     <button type="submit">Login</button>
 
   </form> -->
-  <drag-comp></drag-comp>
+  <!-- <drag-comp></drag-comp> -->
+  <PDFViewVue></PDFViewVue>
 </template>
 
 <script>
-import DragComp from './components/DragComp.vue'
+import PDFViewVue from './components/PDFView.vue'
+// import DragComp from './components/DragComp.vue'
 
 export default {
   components:{
-    DragComp
+    // DragComp
+    PDFViewVue
   },
   data(){
     return{
